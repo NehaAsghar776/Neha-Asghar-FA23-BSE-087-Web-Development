@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSC336 - Lecture 3 (HTML Basics)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #e6e6e6;
+      line-height: 1.6;
+      background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+      background-attachment: fixed;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #002366, #4169e1);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 0 20px rgba(65, 105, 225, 0.4);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .header p {
+      font-size: 1.1em;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(65, 105, 225, 0.15);
+    }
+
+    .title {
+      color: #4169e1;
+      font-size: 1.8em;
+      border-left: 6px solid #002366;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #87aaff;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .list {
+      margin-left: 25px;
+    }
+
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(65, 105, 225, 0.2);
+    }
+
+    pre {
+      background: #0e162f;
+      color: #d4e0ff;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border-left: 4px solid #4169e1;
+    }
+
+    .highlight {
+      background: #101830;
+      padding: 15px;
+      border-left: 4px solid #4169e1;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #d0d9ff;
+    }
+
+    .footer {
+      background: #002366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 10px rgba(65, 105, 225, 0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #e6e6e6;
+    }
+
+    th, td {
+      border: 1px solid #1e2a4a;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #1a2b5a;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #0e0e0e;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #141414;
+    }
+
+    a {
+      color: #87aaff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #a0bfff;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="header">
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 3: HTML Basics</p>
+  </div>
+
+  <!-- Agenda -->
+  <div class="content">
+    <div class="title">Agenda</div>
+    <ul class="list">
+      <li>Overview and History of HTML</li>
+      <li>Difference between HTML &amp; XHTML</li>
+      <li>Elements and Tags</li>
+      <li>Block vs Inline Elements</li>
+      <li>Introduction to HTML Validator</li>
+      <li>Conclusion</li>
+    </ul>
+  </div>
+
+  <!-- What is HTML -->
+  <div class="content">
+    <div class="title">What is HTML?</div>
+    <p><b>HTML (HyperText Markup Language)</b> is the standard language used to create webpages. It defines the structure of a webpage using elements and tags.</p>
+    <img src="html.png" alt="HTML overview diagram" />
+  </div>
+
+  <!-- History -->
+  <div class="content">
+    <div class="title">History of HTML</div>
+    <ul class="list">
+      <li><b>1989:</b> Tim Berners-Lee invents HTML at CERN</li>
+      <li><b>1993:</b> HTML 1.0 released</li>
+      <li><b>1995:</b> HTML 2.0 adds forms and tables</li>
+      <li><b>1997:</b> HTML 4.0 introduces multimedia support</li>
+      <li><b>2014:</b> HTML5 becomes standard with audio, video & semantic tags</li>
+    </ul>
+    <div class="highlight">
+      <b>Evolution:</b>  
+      HTML 1.0 – 4.01 focused on basic structure;  
+      HTML5 adds multimedia and semantic elements for modern web apps.
+    </div>
+  </div>
+
+  <!-- XML -->
+  <div class="content">
+    <div class="title">XML (eXtensible Markup Language)</div>
+    <p>XML is a markup language designed to store and transport data — focusing on structure rather than display.</p>
+    <div class="subtitle">Key Features</div>
+    <ul class="list">
+      <li>Allows custom tags (e.g., &lt;student&gt;)</li>
+      <li>Self-descriptive and human-readable</li>
+      <li>Used in web services, data storage, and configurations</li>
+      <li>Strict syntax — must have root element, proper closing tags, case-sensitive</li>
+    </ul>
+    <div class="subtitle">Example</div>
+    <pre>
+&lt;bookstore&gt;
+  &lt;book&gt;
+    &lt;title&gt;Learning XML&lt;/title&gt;
+    &lt;author&gt;John Doe&lt;/author&gt;
+  &lt;/book&gt;
+&lt;/bookstore&gt;
+    </pre>
+  </div>
+
+  <!-- XHTML -->
+  <div class="content">
+    <div class="title">XHTML (eXtensible HyperText Markup Language)</div>
+    <p>XHTML combines the structure of HTML with the syntax rules of XML, ensuring better compatibility across platforms and browsers.</p>
+    <div class="subtitle">Key Features</div>
+    <ul class="list">
+      <li>All tags must be properly nested and closed</li>
+      <li>Tags must be lowercase</li>
+      <li>Documents must be well-formed</li>
+    </ul>
+    <div class="subtitle">Example</div>
+    <pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+  &lt;head&gt;&lt;title&gt;My XHTML Page&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    &lt;p&gt;This is an XHTML page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </div>
+
+  <!-- Differences -->
+  <div class="content">
+    <div class="title">Key Differences between HTML &amp; XHTML</div>
+    <table>
+      <tr>
+        <th>HTML</th>
+        <th>XHTML</th>
+      </tr>
+      <tr>
+        <td>Less strict; allows some flexibility</td>
+        <td>Stricter syntax and rules</td>
+      </tr>
+      <tr>
+        <td>Tags may remain unclosed (e.g., &lt;img&gt;)</td>
+        <td>All tags must be closed (e.g., &lt;img /&gt;)</td>
+      </tr>
+      <tr>
+        <td>Case-insensitive tags</td>
+        <td>Lowercase tags required</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Elements & Tags -->
+  <div class="content">
+    <div class="title">HTML Elements and Tags</div>
+    <p>An HTML element consists of a tag, its attributes, and the content inside.</p>
+    <pre>&lt;h1&gt;Heading&lt;/h1&gt;</pre>
+    <ul class="list">
+      <li><b>Headings:</b> &lt;h1&gt; to &lt;h6&gt;</li>
+      <li><b>Paragraph:</b> &lt;p&gt;</li>
+      <li><b>Link:</b> &lt;a&gt;</li>
+      <li><b>Image:</b> &lt;img&gt;</li>
+      <li><b>Lists:</b> &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</li>
+    </ul>
+  </div>
+
+  <!-- Attributes -->
+  <div class="content">
+    <div class="title">Attributes in HTML</div>
+    <p>Attributes provide additional information about HTML elements.</p>
+    <pre>&lt;img src="image.jpg" alt="An image"&gt;</pre>
+    <ul class="list">
+      <li><b>src</b> – image source</li>
+      <li><b>href</b> – link destination</li>
+      <li><b>id</b> and <b>class</b> – for styling or scripting</li>
+    </ul>
+  </div>
+
+  <!-- Block vs Inline -->
+  <div class="content">
+    <div class="title">Block vs Inline Elements</div>
+    <div class="subtitle">Block-Level Elements</div>
+    <ul class="list">
+      <li>Start on a new line and take full width</li>
+      <li>Examples: &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;ul&gt;, &lt;table&gt;</li>
+    </ul>
+    <div class="subtitle">Inline Elements</div>
+    <ul class="list">
+      <li>Do not start on a new line and take only necessary width</li>
+      <li>Examples: &lt;span&gt;, &lt;a&gt;, &lt;img&gt;, &lt;strong&gt;, &lt;em&gt;</li>
+    </ul>
+    <img src="block.png" alt="Block vs Inline diagram" />
+  </div>
+
+  <!-- Validator -->
+  <div class="content">
+    <div class="title">HTML Validator</div>
+    <p>An HTML validator checks if your HTML code follows W3C standards.</p>
+    <ul class="list">
+      <li>Ensures cross-browser compatibility</li>
+      <li>Detects errors early</li>
+      <li>Improves SEO and accessibility</li>
+    </ul>
+    <div class="subtitle">Common Tools</div>
+    <ul class="list">
+      <li>W3C Markup Validator</li>
+      <li>Nu HTML Checker</li>
+    </ul>
+    <div class="subtitle">How to Use</div>
+    <ol class="list">
+      <li>Visit <a href="https://validator.w3.org/" target="_blank">W3C Validator</a></li>
+      <li>Upload your HTML file or paste your code</li>
+      <li>Review highlighted errors and fix them</li>
+    </ol>
+  </div>
+
+  <!-- Lesson Outcomes -->
+  <div class="content">
+    <div class="title">Lesson Learning Outcomes (LLOs)</div>
+    <ul class="list">
+      <li>Understand the history and structure of HTML</li>
+      <li>Differentiate between HTML and XHTML</li>
+      <li>Use block vs inline elements appropriately</li>
+      <li>Validate HTML for error-free web development</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 – Lecture 3</p>
+  </div>
+</body>
+</html>

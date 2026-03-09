@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSC336 - Lecture 6 (HTML Forms)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #0d0d0d;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff8800, #ffb84d);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+    }
+
+    .header p {
+      font-size: 1.1em;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .title {
+      color: #ff8800;
+      font-size: 1.8em;
+      border-left: 6px solid #ffb84d;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #ffb84d;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .list {
+      margin-left: 25px;
+    }
+
+    pre {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border-left: 4px solid #ff8800;
+      color: #f5f5f5;
+    }
+
+    img {
+      display: block;
+      max-width: 50%;
+      margin: 25px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.6);
+    }
+
+    .highlight {
+      background: #262626;
+      padding: 15px;
+      border-left: 4px solid #ff8800;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      background: #ff8800;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      color: #ffb84d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 6: HTML Forms</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Introduction to HTML Forms</div>
+    <p>HTML Forms allow web applications to collect user input. They are used for tasks like <b>login, registration,</b> and <b>feedback</b>.</p>
+    <p>Forms communicate with servers to process or store submitted data.</p>
+    <img src="formintro.png" alt="Forms introduction diagram placeholder" />
+  </div>
+
+  <div class="content">
+    <div class="title">The &lt;form&gt; Element</div>
+    <p>The <b>&lt;form&gt;</b> tag is the container for all input elements in a web form.</p>
+    <pre>
+&lt;form action="/submit" method="post"&gt;
+  &lt;!-- Form content here --&gt;
+&lt;/form&gt;
+    </pre>
+    <div class="subtitle">Form Attributes</div>
+    <ul class="list">
+      <li><b>action:</b> The URL to send the form data to.</li>
+      <li><b>method:</b> The HTTP method (<b>GET</b> or <b>POST</b>) used for submission.</li>
+      <li><b>GET:</b> Sends data via the URL (for small data).</li>
+      <li><b>POST:</b> Sends data in the request body (for secure/large data).</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Form Structure</div>
+    <p>Forms contain elements for user interaction such as <b>labels</b>, <b>inputs</b>, and <b>buttons</b>.</p>
+    <pre>
+&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+&lt;/form&gt;
+    </pre>
+    <img src="structure.png" alt="Form structure placeholder" />
+  </div>
+
+  <div class="content">
+    <div class="title">The &lt;label&gt; Element</div>
+    <p>Associates text with an input field, improving usability and accessibility.</p>
+    <pre>
+&lt;form&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">The &lt;input&gt; Element</div>
+    <p>The most commonly used form element for collecting user data.</p>
+    <ul class="list">
+      <li>Text</li>
+      <li>Email</li>
+      <li>Password</li>
+      <li>Checkbox</li>
+      <li>Radio</li>
+    </ul>
+    <pre>&lt;input type="text" name="username"&gt;</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Common Input Types</div>
+    <ul class="list">
+      <li><b>Text:</b> Single-line input</li>
+      <li><b>Password:</b> Hidden characters</li>
+      <li><b>Email:</b> Validated email format</li>
+    </ul>
+    <pre>&lt;input type="email" name="user_email" required&gt;</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Checkbox Input</div>
+    <pre>
+&lt;form&gt;
+  &lt;input type="checkbox" id="subscribe" name="subscribe" value="newsletter"&gt;
+  &lt;label for="subscribe"&gt;Subscribe to Newsletter&lt;/label&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Radio Button Input</div>
+    <pre>
+&lt;form&gt;
+  &lt;input type="radio" id="male" name="gender" value="male"&gt;
+  &lt;label for="male"&gt;Male&lt;/label&gt;
+  &lt;input type="radio" id="female" name="gender" value="female"&gt;
+  &lt;label for="female"&gt;Female&lt;/label&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">&lt;select&gt; and &lt;option&gt; Elements</div>
+    <p>Create dropdown menus with multiple choices.</p>
+    <pre>
+&lt;form&gt;
+  &lt;select name="country"&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">The &lt;textarea&gt; Element</div>
+    <p>Used for multi-line text input, such as comments or messages.</p>
+    <pre>
+&lt;form&gt;
+  &lt;textarea name="message" rows="4" cols="50"&gt;Enter your message here...&lt;/textarea&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">The &lt;button&gt; Element</div>
+    <p>Used to submit a form or trigger JavaScript actions.</p>
+    <pre>
+&lt;form&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Form Validation Attributes</div>
+    <ul class="list">
+      <li><b>required:</b> Field must be filled before submission.</li>
+      <li><b>maxlength:</b> Limits maximum characters allowed.</li>
+      <li><b>pattern:</b> Validates using a regular expression.</li>
+    </ul>
+    <pre>&lt;input type="text" name="username" required maxlength="10"&gt;</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Placeholder Attribute</div>
+    <p>Displays a hint of the expected input until the user types.</p>
+    <pre>&lt;input type="text" name="username" placeholder="Enter your username"&gt;</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">The name and value Attributes</div>
+    <p><b>name:</b> Identifies the input field for server-side processing.</p>
+    <p><b>value:</b> Sets a default or submitted value.</p>
+    <pre>&lt;input type="text" name="username" value="JohnDoe"&gt;</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Form Submission Process</div>
+    <p>When the user submits, data (based on <b>name</b> and <b>value</b>) is sent to the server.</p>
+    <pre>
+&lt;form action="/submit" method="post"&gt;
+  &lt;input type="text" name="username" value="JohnDoe"&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Enhancing Forms with JavaScript</div>
+    <p>JavaScript adds dynamic validation and interactivity to forms.</p>
+    <ul class="list">
+      <li>Real-time validation</li>
+      <li>Dynamic field updates</li>
+      <li>Interactive feedback before submission</li>
+    </ul>
+    <img src="valid.png" alt="JavaScript form validation placeholder" />
+  </div>
+
+  <div class="content">
+    <div class="title">Lesson Learning Outcomes (LLOs)</div>
+    <ul class="list">
+      <li>Understand how forms collect and submit user data.</li>
+      <li>Use different input types and form controls effectively.</li>
+      <li>Apply validation attributes to ensure data quality.</li>
+      <li>Enhance forms using JavaScript interactivity.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 – Lecture 6</p>
+  </div>
+
+</body>
+</html>

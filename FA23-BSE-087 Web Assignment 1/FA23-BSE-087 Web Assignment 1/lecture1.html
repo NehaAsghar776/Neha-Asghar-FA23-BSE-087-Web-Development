@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSC336 - Lecture 1: Web Technologies</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #800000, #b30000);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 0 25px rgba(128, 0, 0, 0.6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ffcccc;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 25px rgba(128, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #b30000;
+      border-left: 6px solid #800000;
+      padding-left: 10px;
+    }
+
+    h3 {
+      color: #cc3333;
+      margin-top: 20px;
+    }
+
+    ul {
+      margin-left: 25px;
+    }
+
+    li {
+      color: #ddd;
+    }
+
+    p {
+      color: #ddd;
+    }
+
+    img {
+      display: block;
+      max-width: 50%;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(179, 0, 0, 0.3);
+    }
+
+    .example {
+      background: #261111;
+      padding: 15px;
+      border-left: 4px solid #b30000;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #f5f5f5;
+    }
+
+    footer {
+      background: #660000;
+      color: #ffcccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 15px rgba(128, 0, 0, 0.5);
+    }
+
+    a {
+      color: #ff6666;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 6px #ff3333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 1: Overview of Web Platforms</p>
+  </header>
+
+  <section>
+    <h2>Agenda</h2>
+    <ul>
+      <li>Overview of Web Terminologies</li>
+      <li>Web Communication Protocol (HTTP)</li>
+      <li>Web Generations</li>
+      <li>Web Standards & Constraints</li>
+      <li>Introduction to Web Platforms</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Definition of Web Platforms</h2>
+    <p><strong>“Web platforms</strong> are digital environments or frameworks that allow users to interact with, develop, and deploy web-based applications and services.”</p>
+
+    <h3>Importance in Modern Technology</h3>
+    <p>They provide a structured way for developers to create, manage, and deliver content and functionality over the internet.</p>
+    
+    <h3>Key Components</h3>
+    <ul>
+      <li><b>Infrastructure:</b> Servers, databases, and networks supporting web apps.</li>
+      <li><b>Development Tools:</b> HTML, CSS, JS, frameworks like React, Angular, Django.</li>
+      <li><b>Content Management:</b> WordPress, Drupal, Joomla.</li>
+      <li><b>User Interface (UI):</b> Web pages, forms, and menus.</li>
+      <li><b>APIs:</b> Enable communication between systems.</li>
+      <li><b>Security Features:</b> Authentication, encryption, access controls.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Examples of Web Platforms</h2>
+    <ul>
+      <li><b>Social Media:</b> Facebook, Twitter, Instagram</li>
+      <li><b>E-Commerce:</b> Shopify, Magento, WooCommerce</li>
+      <li><b>CMS:</b> WordPress, Drupal, Joomla</li>
+      <li><b>Cloud Platforms:</b> AWS, Google Cloud, Microsoft Azure</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Web Communication Protocol - HTTP</h2>
+    <p><strong>HTTP (Hypertext Transfer Protocol)</strong> is used for transmitting data over the web between client and server.</p>
+
+    <img src="http.png" alt="HTTP request response diagram placeholder">
+
+    <h3>HTTP Methods</h3>
+    <ul>
+      <li><b>GET:</b> Retrieve data</li>
+      <li><b>POST:</b> Submit data</li>
+      <li><b>PUT/PATCH:</b> Update data</li>
+      <li><b>DELETE:</b> Remove data</li>
+    </ul>
+
+    <h3>HTTP Status Codes</h3>
+    <ul>
+      <li>1xx – Informational</li>
+      <li>2xx – Success (200 OK)</li>
+      <li>3xx – Redirection</li>
+      <li>4xx – Client Error (404 Not Found)</li>
+      <li>5xx – Server Error (500 Internal Server Error)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>HTTPS - Secure Communication</h2>
+    <p><strong>HTTPS</strong> (HTTP Secure) uses SSL/TLS to encrypt communication between client and server, protecting it from tampering and spying.</p>
+  </section>
+
+  <section>
+    <h2>Web Generations Overview</h2>
+    <div class="example">
+      <p><b>Web 1.0:</b> Static Web (1990s) → Simple HTML pages</p>
+      <p><b>Web 2.0:</b> Social Web (2000s) → Dynamic, user-generated content</p>
+      <p><b>Web 3.0:</b> Semantic Web (2010s+) → AI-driven, machine-readable data</p>
+      <p><b>Web 4.0:</b> Intelligent Web (Future) → AI + IoT, immersive experiences</p>
+    </div>
+    <img src="web gen.png" alt="Web generations chart placeholder">
+  </section>
+
+  <section>
+    <h2>Web Standards</h2>
+    <p><strong>Definition:</strong> Guidelines by W3C and IETF ensuring interoperability and accessibility across devices.</p>
+
+    <h3>Key Organizations</h3>
+    <ul>
+      <li>W3C → World Wide Web Consortium</li>
+      <li>IETF → Internet Engineering Task Force</li>
+      <li>WHATWG → Web Hypertext Application Technology Working Group</li>
+    </ul>
+
+    <h3>Core Standards</h3>
+    <ul>
+      <li><b>HTML5:</b> Structure and semantics</li>
+      <li><b>CSS3:</b> Layout, animations, flexbox, grid</li>
+      <li><b>ECMAScript (JavaScript):</b> ES2024 adds new async features</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Web Accessibility & Security</h2>
+    <ul>
+      <li><b>WCAG:</b> Web Content Accessibility Guidelines</li>
+      <li><b>Accessibility:</b> Text-to-speech, keyboard navigation</li>
+      <li><b>Security Standards:</b> OWASP Top Ten</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Web Constraints</h2>
+    <h3>Technical Constraints</h3>
+    <ul>
+      <li>Browser Compatibility</li>
+      <li>Device Compatibility</li>
+      <li>Bandwidth Limitations</li>
+    </ul>
+
+    <h3>Legal & Ethical Constraints</h3>
+    <ul>
+      <li>Data Privacy Laws (GDPR, CCPA)</li>
+      <li>Copyright & Intellectual Property</li>
+      <li>Ethical Design avoiding dark patterns</li>
+    </ul>
+
+    <h3>Design Constraints</h3>
+    <ul>
+      <li>User Experience (UX)</li>
+      <li>Accessibility</li>
+      <li>Consistency</li>
+    </ul>
+
+    <h3>Content Constraints</h3>
+    <ul>
+      <li>Localization (language & culture)</li>
+      <li>SEO Practices</li>
+      <li>Content Load Management</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Examples of Successful Web Platforms</h2>
+    <ul>
+      <li><b>Amazon:</b> Powerful e-commerce with personalization.</li>
+      <li><b>Facebook:</b> Billions of users and social interaction.</li>
+      <li><b>WordPress:</b> Popular CMS with plugins.</li>
+      <li><b>Netflix:</b> Streaming platform with AI recommendations.</li>
+      <li><b>Shopify:</b> Easy online store management.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 - Web Technologies Lecture 1</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Web Technologies</title>
+  <style>
+    /* General body styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #f0f0f0;
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: -1;
+    }
+
+    /* Sign-up form container */
+    .signup-form {
+      background: rgba(20, 20, 20, 0.85);
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.4);
+      width: 350px;
+      backdrop-filter: blur(6px);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    /* Animation for form */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Form title */
+    .signup-form h2 {
+      text-align: center;
+      color: #00bfff;
+      margin-bottom: 25px;
+      text-shadow: 0 0 8px #000;
+      letter-spacing: 1px;
+    }
+
+    /* Labels */
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #ccc;
+      font-weight: 500;
+    }
+
+    /* Inputs */
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 6px;
+      background: #111;
+      color: #fff;
+      box-shadow: inset 0 0 5px rgba(0, 191, 255, 0.3);
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 8px #00bfff;
+    }
+
+    /* Submit button */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 8px;
+      background: #00bfff;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: #0099cc;
+      box-shadow: 0 0 12px #00bfff;
+    }
+
+    /* Footer text */
+    .footer-text {
+      text-align: center;
+      margin-top: 18px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .footer-text a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-text a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #00bfff;
+    }
+  </style>
+</head>
+<body>
+  <form class="signup-form" action="index.html" method="get">
+    <h2>Sign Up</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="regnum">Registration Number:</label>
+    <input type="text" id="regnum" name="regnum" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required minlength="6">
+
+    <label for="confirmpassword">Confirm Password:</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" required minlength="6">
+
+    <button type="submit">Sign Up</button>
+
+    <div class="footer-text">
+      Already have an account? <a href="index.html">Go to Main Page</a>
+    </div>
+  </form>
+</body>
+</html>

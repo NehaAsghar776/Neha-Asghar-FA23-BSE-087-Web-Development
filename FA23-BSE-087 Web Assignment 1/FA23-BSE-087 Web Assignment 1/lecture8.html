@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSC336 - Lecture 8 (CSS Selectors)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #0b0b0b url('https://www.transparenttextures.com/patterns/black-linen.png');
+      color: #e6f1ff;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0d6efd, #00bfff);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .header p {
+      font-size: 1.1em;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #121212;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.2);
+    }
+
+    .title {
+      color: #00bfff;
+      font-size: 1.8em;
+      border-left: 6px solid #0d6efd;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #63c5ff;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .list {
+      margin-left: 25px;
+    }
+
+    pre {
+      background: #1a1a1a;
+      color: #d8efff;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border-left: 4px solid #00bfff;
+    }
+
+    .highlight {
+      background: #1a1a1a;
+      padding: 15px;
+      border-left: 4px solid #00bfff;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    code {
+      color: #63c5ff;
+      background: #222;
+      padding: 2px 5px;
+      border-radius: 5px;
+    }
+
+    b {
+      color: #63c5ff;
+    }
+
+    .footer {
+      background: #0d6efd;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      box-shadow: 0 -4px 20px rgba(0, 191, 255, 0.3);
+    }
+
+    a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 8: CSS Selectors</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Introduction to CSS Selectors</div>
+    <p>CSS Selectors define which HTML elements the styles apply to. They are the foundation of CSS, enabling developers to target elements based on their type, attributes, class, or position in the document structure.</p>
+    <ul class="list">
+      <li>Basic Selectors</li>
+      <li>Descendant and Child Selectors</li>
+      <li>Attribute Selectors</li>
+      <li>Pseudo-classes</li>
+      <li>Pseudo-elements</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Descendant Selector</div>
+    <p>The descendant selector targets all elements nested inside another element, including children and grandchildren.</p>
+    <div class="subtitle">Example (descendantSelector.html)</div>
+    <pre>
+&lt;ol&gt;
+  &lt;li&gt;List item one.&lt;/li&gt;
+  &lt;li&gt;List item two.&lt;/li&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Sublist item a.&lt;/li&gt;
+    &lt;li&gt;Sublist item b.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li&gt;List item three.&lt;/li&gt;
+&lt;/ol&gt;
+
+ol li {
+  color: skyblue;
+}
+    </pre>
+    <p>This selector applies <b>color: skyblue</b> to all <code>&lt;li&gt;</code> elements inside an <code>&lt;ol&gt;</code> — whether they are direct or nested descendants.</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Child Selector</div>
+    <p>The child selector targets only the immediate children of an element (not grandchildren).</p>
+    <pre>
+ol > li {
+  color: skyblue;
+}
+    </pre>
+    <p>This means only direct <code>&lt;li&gt;</code> elements inside the <code>&lt;ol&gt;</code> will be styled.</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Attribute Selector</div>
+    <p>Attribute selectors target elements based on specific attributes and values.</p>
+    <div class="subtitle">Example (attributeSelector.html)</div>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://google.com"&gt;Google&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://facebook.com"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://amazon.com"&gt;Amazon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+a {
+  color: skyblue;
+}
+a[href="https://facebook.com"] {
+  color: white;
+}
+    </pre>
+    <p>In this example, all links are skyblue by default, but the Facebook link is styled white using the attribute selector.</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Pseudo-class Selectors</div>
+    <p>Pseudo-classes define the special state of an element, such as when it’s hovered, focused, or clicked.</p>
+    <div class="subtitle">Example (pseudoclassSelector.html)</div>
+    <pre>
+&lt;button&gt;Click Me!&lt;/button&gt;
+
+button {
+  background-color: skyblue;
+  font-size: 24px;
+  width: 200px;
+  height: 50px;
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
+    </pre>
+    <p>In this example, the button turns white with black text when the user hovers the mouse pointer over it.</p>
+  </div>
+
+  <div class="content">
+    <div class="title">CSS Pseudo-elements</div>
+    <p>Pseudo-elements are used to style specific parts of an element, such as the first letter or the first line of text.</p>
+    <pre>
+p::first-letter {
+  font-size: 24px;
+  color: skyblue;
+}
+    </pre>
+    <p>This makes the first letter of each paragraph large and sky blue.</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Summary</div>
+    <ul class="list">
+      <li><b>Descendant Selector:</b> Targets nested elements.</li>
+      <li><b>Child Selector:</b> Targets only direct child elements.</li>
+      <li><b>Attribute Selector:</b> Matches elements with specific attributes.</li>
+      <li><b>Pseudo-class:</b> Styles an element in a particular state.</li>
+      <li><b>Pseudo-element:</b> Styles a specific part of an element.</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Lesson Learning Outcomes (LLOs)</div>
+    <ul class="list">
+      <li>Understand and apply descendant, child, and attribute selectors.</li>
+      <li>Use pseudo-classes to style elements in different states.</li>
+      <li>Use pseudo-elements to enhance specific text parts.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 – Lecture 8</p>
+  </div>
+</body>
+</html>

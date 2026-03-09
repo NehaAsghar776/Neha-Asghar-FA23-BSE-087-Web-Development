@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSC336 - Lecture 2 (Web Applications & Architectures)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      line-height: 1.6;
+      background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+      background-attachment: fixed;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #006400, #00cc66);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 0 15px rgba(0,255,100,0.4);
+    }
+
+    .header h1 { 
+      margin: 0; 
+      font-size: 2.5em; 
+    }
+
+    .header p { 
+      font-size: 1.1em; 
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,255,100,0.1);
+    }
+
+    .title {
+      color: #00ff88;
+      font-size: 1.8em;
+      border-left: 6px solid #00cc66;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle { 
+      color: #00cc66; 
+      font-weight: bold; 
+      margin-top: 20px; 
+    }
+
+    .list { 
+      margin-left: 25px; 
+    }
+
+    img {
+      display: block; 
+      max-width: 60%;
+      margin: 20px auto; 
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0,255,100,0.2);
+    }
+
+    .highlight {
+      background: #0d1f0d; 
+      padding: 15px;
+      border-left: 4px solid #00cc66;
+      border-radius: 8px; 
+      margin-top: 10px;
+    }
+
+    .footer {
+      background: #006400;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 10px rgba(0,255,100,0.3);
+    }
+
+    a {
+      color: #00ff88;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 2: Categories of Web Applications and Web Architectures</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Introduction</div>
+    <p>Web applications use different structures, called <b>architectures</b>, to operate efficiently and meet various needs. These architectures define how an application is built, how it performs, and how well it scales with complexity.</p>
+    <p><b>Scalability</b> means a web app can handle more users, requests, or data without breaking or slowing down — by adding resources or optimizing systems.</p>
+
+    <div class="subtitle">Importance</div>
+    <p>Understanding categories and architecture patterns helps developers design scalable, user-friendly, and effective web applications.</p>
+  </div>
+
+  <div class="content">
+    <div class="title">Categories of Web Applications</div>
+    <ul class="list">
+      <li>Document-Centric Web Applications</li>
+      <li>Social Web Applications</li>
+      <li>Semantic Web Applications</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Document-Centric Web Applications</div>
+    <p>These applications focus on creating, managing, and sharing documents.</p>
+    <div class="subtitle">Examples</div>
+    <ul class="list">
+      <li>Google Docs</li>
+      <li>Microsoft Office Online</li>
+      <li>Dropbox Paper</li>
+    </ul>
+    <div class="subtitle">Features</div>
+    <ul class="list">
+      <li>Real-time collaboration</li>
+      <li>Version control (auto-save, history, restore options)</li>
+      <li>Document sharing</li>
+      <li>Rich editing tools</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Social Web Applications</div>
+    <p>Social Web Apps allow users to interact, share content, and communicate globally.</p>
+    <div class="subtitle">Examples</div>
+    <ul class="list">
+      <li>Facebook</li>
+      <li>Twitter</li>
+      <li>Instagram</li>
+      <li>LinkedIn</li>
+    </ul>
+    <div class="subtitle">Features</div>
+    <ul class="list">
+      <li>User Profiles</li>
+      <li>News Feeds</li>
+      <li>Likes, Comments, Shares</li>
+      <li>Notifications</li>
+    </ul>
+    <img src="cd.png" alt="Social Web Apps">
+  </div>
+
+  <div class="content">
+    <div class="title">Semantic Web Applications</div>
+    <p>These apps use data with semantic meaning to improve user experience and information retrieval.</p>
+    <div class="subtitle">Examples</div>
+    <ul class="list">
+      <li>Wolfram Alpha</li>
+      <li>Google Knowledge Graph</li>
+      <li>Schema.org</li>
+    </ul>
+    <div class="subtitle">Features</div>
+    <ul class="list">
+      <li>Enhanced Search Capabilities</li>
+      <li>Data Integration</li>
+      <li>Context-Aware Information Retrieval</li>
+      <li>Improved Data Relationships</li>
+    </ul>
+    <img src="sem.png" alt="Semantic Web Diagram">
+  </div>
+
+  <div class="content">
+    <div class="title">Web Architectures Overview</div>
+    <p>Architectural patterns define how web applications are structured and interact between layers.</p>
+    <ul class="list">
+      <li>Layered Architecture</li>
+      <li>One-Tier</li>
+      <li>Two-Tier</li>
+      <li>Three-Tier</li>
+      <li>N-Layered Architecture</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Layered Architecture</div>
+    <p>Consists of:</p>
+    <ul class="list">
+      <li><b>Presentation Layer</b> – User interface and interaction</li>
+      <li><b>Business Logic Layer</b> – Core functionality</li>
+      <li><b>Data Layer</b> – Storage and retrieval</li>
+    </ul>
+    <p><b>Benefits:</b> Separation of concerns, modularity, scalability</p>
+    <img src="layer.png" alt="Layered Architecture Diagram">
+  </div>
+
+  <div class="content">
+    <div class="title">One-Tier Architecture</div>
+    <p>All components integrated in a single system.</p>
+    <p><b>Examples:</b> Desktop or simple standalone applications.</p>
+    <img src="onetier.png" alt="One Tier Architecture Diagram">
+  </div>
+
+  <div class="content">
+    <div class="title">Two-Tier (Client-Server) Architecture</div>
+    <p><b>Structure:</b> Client handles presentation, server manages data.</p>
+    <p><b>Examples:</b> Basic online forms or database applications.</p>
+    <img src="twotier.png" alt="Two Tier Architecture Diagram">
+  </div>
+
+  <div class="content">
+    <div class="title">Three-Tier Architecture</div>
+    <ul class="list">
+      <li><b>Presentation Tier:</b> Frontend (website or app)</li>
+      <li><b>Application Tier:</b> Business logic and processing</li>
+      <li><b>Data Tier:</b> Database or storage</li>
+    </ul>
+    <p><b>Benefits:</b> Scalability, separation, easier maintenance</p>
+    <img src="threetier.png" alt="Three Tier Architecture Diagram">
+  </div>
+
+  <div class="content">
+    <div class="title">N-Layered Architecture</div>
+    <p>An extended layered architecture with multiple layers:</p>
+    <ul class="list">
+      <li>Presentation</li>
+      <li>Application</li>
+      <li>Domain</li>
+      <li>Data Access</li>
+    </ul>
+    <p><b>Benefits:</b> Flexibility, modularity, scalability, maintainability</p>
+    <img src="nlayer.png" alt="N Layered Architecture Diagram">
+  </div>
+
+  <div class="footer">
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 - Lecture 2</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Technologies</title>
+  <style>
+    /* General body styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    /* Overlay effect for better readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    /* Heading */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #00bfff;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    /* Paragraphs */
+    p {
+      text-align: center;
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    /* Table styling */
+    table {
+      width: 80%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background: rgba(20, 20, 20, 0.85);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Table header */
+    th {
+      background: #00bfff;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Table cells */
+    td, th {
+      border: 1px solid #444;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* Hover effects */
+    tr:hover {
+      background: rgba(0, 191, 255, 0.2);
+      transition: 0.3s;
+    }
+
+    /* Links */
+    a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #00bfff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Web Technologies</h1>
+  <p>Name: Neha Asghar</p>
+  <p>Registration Number: FA23-BSE-087</p>
+
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Lecture No.</th>
+      <th>Title</th>
+      <th>Page Link</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Intro to HTML</td>
+      <td><a href="lecture1.html">Introduction to web technologies</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>WEB</td>
+      <td><a href="lecture2.html">Categories of web</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Intro to HTML</td>
+      <td><a href="lecture3.html">HTML Basics</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Intro to HTML</td>
+      <td><a href="lecture4.html">Table, Div & Design</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Intro to HTML</td>
+      <td><a href="lecture5.html">HTML 5</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>HTML Forms</td>
+      <td><a href="lecture6.html">FORMS</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CSS</td>
+      <td><a href="lecture7.html">CSS & Intro</a></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>CSS Categories</td>
+      <td><a href="lecture8.html">CSS Selectors</a></td>
+    </tr>
+    <!-- Add more lectures as required -->
+  </table>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSC336 - Lecture 7 (CSS Introduction)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+    .header {
+      background: linear-gradient(135deg, #4b2e05, #a47148);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .header h1 { margin: 0; font-size: 2.5em; }
+    .header p { font-size: 1.1em; }
+
+    .content {
+      width: 50%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .title {
+      color: #d9a066;
+      font-size: 1.8em;
+      border-left: 6px solid #a47148;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle { color: #c58b59; font-weight: bold; margin-top: 20px; }
+    .list { margin-left: 25px; }
+
+    pre {
+      background: #2a2a2a;
+      color: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border-left: 4px solid #a47148;
+    }
+
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 25px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .highlight {
+      background: #2a2a2a;
+      color: #f0d6b2;
+      padding: 15px;
+      border-left: 4px solid #a47148;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      background: #4b2e05;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    a, code {
+      color: #d9a066;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 7: Introduction to CSS</p>
+  </div>
+
+  <div class="content">
+    <div class="title">What is CSS?</div>
+    <p><b>CSS (Cascading Style Sheets)</b> is the language used to style and format web pages. It describes how HTML elements are displayed on the screen, paper, or other media.</p>
+    <ul class="list">
+      <li>CSS controls layout, color, font, and spacing.</li>
+      <li>External stylesheets allow consistent styling across multiple web pages.</li>
+      <li>CSS saves time and improves maintainability.</li>
+    </ul>
+    <img src="css.png" alt="CSS introduction illustration placeholder">
+  </div>
+
+  <div class="content">
+    <div class="title">CSS Syntax</div>
+    <p>A CSS rule consists of a <b>selector</b> and a <b>declaration block</b>.</p>
+    <img src="syntex.png" alt="CSS syntax diagram placeholder">
+    <pre>
+h1 {
+  color: red;
+  text-align: right;
+}
+    </pre>
+    <p>The declaration block contains <b>properties</b> and their corresponding <b>values</b>.</p>
+    <pre>
+p {
+  font-family: Arial;
+  font-size: 20px;
+}
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Common CSS Properties</div>
+    <ul class="list">
+      <li>color</li>
+      <li>text-align</li>
+      <li>font-family</li>
+      <li>font-size</li>
+      <li>width / height</li>
+      <li>margin / padding</li>
+      <li>border</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Ways to Add CSS</div>
+    <p>There are three main ways to include CSS in your web page:</p>
+    <ul class="list">
+      <li><b>Inline CSS:</b> Inside the HTML element using the <code>style</code> attribute.</li>
+      <li><b>Internal CSS:</b> Inside a <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code>.</li>
+      <li><b>External CSS:</b> Using a separate <code>.css</code> file linked with <code>&lt;link&gt;</code>.</li>
+    </ul>
+
+    <div class="subtitle">Example – Inline CSS</div>
+    <pre>
+&lt;h1 style="color: brown; text-align: center;"&gt;Hello&lt;/h1&gt;
+&lt;body style="background-color: #1e1e1e;"&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Typeface (Font Family)</div>
+    <p>A <b>typeface</b> is a set of characters with a consistent design. A <b>font</b> is a particular implementation of a typeface (weight, size, and style).</p>
+    <pre>font: bold 40px sans-serif;</pre>
+    <img src="serif.png" alt="Typeface example illustration placeholder">
+
+    <div class="subtitle">Common Font Families</div>
+    <ul class="list">
+      <li><b>Serif:</b> Decorative ends on letters, classic and traditional.</li>
+      <li><b>Sans-serif:</b> Clean, modern, and easy to read on screens.</li>
+      <li><b>Monospace:</b> Equal spacing for all letters (used for code).</li>
+      <li><b>Cursive:</b> Imitates handwriting or brush script.</li>
+      <li><b>Fantasy:</b> Decorative and playful fonts.</li>
+    </ul>
+
+    <div class="highlight">
+      <b>Note:</b> Sans-serif fonts are generally easier to read on digital screens.
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="title">Example – External CSS</div>
+    <pre>
+h1 {
+  color: brown;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+}
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">CSS Box Model</div>
+    <p>Every HTML element can be viewed as a box consisting of:</p>
+    <ul class="list">
+      <li>Content</li>
+      <li>Padding</li>
+      <li>Border</li>
+      <li>Margin</li>
+    </ul>
+    <img src="cssbox.png" alt="CSS box model diagram placeholder">
+  </div>
+
+  <div class="content">
+    <div class="title">Table Border Example</div>
+    <pre>
+table {
+  border: 1px solid #a47148;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #a47148;
+  padding: 5px;
+}
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Identifying Elements (div, span, id, class)</div>
+    <pre>
+&lt;div&gt;Hello, World!&lt;/div&gt;
+
+div {
+  background-color: #a47148;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  margin: 20px;
+  border: 3px dashed #fff;
+}
+    </pre>
+
+    <div class="subtitle">ID and Class Example</div>
+    <pre>
+&lt;h1 id="foo"&gt;Heading1&lt;/h1&gt;
+&lt;h1 id="bar"&gt;Heading2&lt;/h1&gt;
+&lt;h1 class="baz"&gt;Heading3&lt;/h1&gt;
+    </pre>
+
+    <pre>
+#foo { color: #a47148; }
+#bar { color: #d9a066; }
+.baz { color: #c58b59; }
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">CSS Specificity (Precedence)</div>
+    <p>When multiple CSS rules apply to the same element, the one with higher <b>specificity</b> takes precedence.</p>
+    <ul class="list">
+      <li><b>Inline</b> styles (highest)</li>
+      <li><b>ID</b> selectors</li>
+      <li><b>Class</b> selectors</li>
+      <li><b>Type</b> selectors (lowest)</li>
+    </ul>
+    <img src="specify.png" alt="CSS specificity chart placeholder">
+  </div>
+
+  <div class="content">
+    <div class="title">Lesson Learning Outcomes (LLOs)</div>
+    <ul class="list">
+      <li>Understand CSS structure and syntax.</li>
+      <li>Use inline, internal, and external CSS.</li>
+      <li>Distinguish between typeface and font.</li>
+      <li>Explain the CSS box model.</li>
+      <li>Understand CSS specificity and precedence.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 – Lecture 7</p>
+  </div>
+
+</body>
+</html>

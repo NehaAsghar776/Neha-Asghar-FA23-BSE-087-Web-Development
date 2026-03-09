@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSC336 - Lecture 5 (Introduction to HTML5)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #0d0d0d;
+      color: #e6e6e6;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #6a0dad, #b266ff);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .header p {
+      font-size: 1.1em;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .title {
+      color: #b266ff;
+      font-size: 1.8em;
+      border-left: 6px solid #6a0dad;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #a64dff;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .list {
+      margin-left: 25px;
+    }
+
+    pre {
+      background: #141414;
+      color: #e0d6ff;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border-left: 4px solid #b266ff;
+    }
+
+    img {
+      display: block;
+      max-width: 50%;
+      margin: 25px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(178, 102, 255, 0.3);
+    }
+
+    .highlight {
+      background: #191919;
+      padding: 15px;
+      border-left: 4px solid #6a0dad;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #d8cfff;
+    }
+
+    .footer {
+      background: #3c006b;
+      color: #e6e6e6;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: #c68eff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #c68eff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CSC336 - Web Technologies</h1>
+    <p>Lecture 5: Introduction to HTML5</p>
+  </div>
+
+  <div class="content">
+    <div class="title">What is HTML5?</div>
+    <p><b>HTML5</b> is the latest version of the HTML standard. It introduces new elements, attributes, and behaviors for modern web development.</p>
+    <p>It focuses on <b>better semantics</b>, <b>multimedia support</b>, and <b>device independence</b>.</p>
+    <pre>&lt;!DOCTYPE html&gt;</pre>
+    <img src="html5.png" alt="HTML5 logo placeholder">
+  </div>
+
+  <div class="content">
+    <div class="title">Key Features of HTML5</div>
+    <ul class="list">
+      <li><b>Responsive Design:</b> Automatically adjusts layout for different screen sizes.</li>
+      <li><b>Viewport Meta Tag:</b> Ensures proper scaling on various devices.</li>
+      <li><b>Flexible Multimedia:</b> Supports native audio and video playback.</li>
+      <li><b>Cross-Platform Compatibility:</b> Enables interactive and graphical content (via <code>&lt;canvas&gt;</code>) across devices.</li>
+      <li><b>Enhanced Forms:</b> New input types like <code>email</code>, <code>tel</code>, <code>date</code>, etc.</li>
+      <li><b>Offline Support:</b> Uses <code>localStorage</code> and service workers for offline functionality.</li>
+    </ul>
+    <img src="h5.png" alt="HTML5 features illustration">
+  </div>
+
+  <div class="content">
+    <div class="title">HTML5 vs Previous Versions</div>
+    <ul class="list">
+      <li><b>HTML4:</b> Focused on structure using <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>.</li>
+      <li><b>HTML5:</b> Introduced semantic tags for meaning and accessibility.</li>
+    </ul>
+    <img src="sementic.png" alt="HTML5 vs HTML4 comparison chart">
+  </div>
+
+  <div class="content">
+    <div class="title">Importance of Semantic HTML</div>
+    <p>Semantic HTML improves <b>accessibility</b>, <b>SEO</b>, and <b>maintainability</b> of web pages. It helps browsers and search engines understand page structure and content meaning.</p>
+    <img src="s1.png" alt="Semantic HTML structure example">
+  </div>
+
+  <div class="content">
+    <div class="title">Semantic Elements Overview</div>
+    <p><b>Semantic elements</b> clearly describe their purpose to both browsers and developers. Examples include:</p>
+    <ul class="list">
+      <li><code>&lt;table&gt;</code></li>
+      <li><code>&lt;form&gt;</code></li>
+      <li><code>&lt;article&gt;</code></li>
+      <li><code>&lt;section&gt;</code></li>
+      <li><code>&lt;header&gt;</code></li>
+      <li><code>&lt;footer&gt;</code></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Semantic vs Non-Semantic Elements</div>
+    <ul class="list">
+      <li><b>Non-Semantic:</b> &lt;div&gt;, &lt;span&gt; (provide no information about content)</li>
+      <li><b>Semantic:</b> &lt;form&gt;, &lt;table&gt;, &lt;article&gt;, &lt;nav&gt;, &lt;aside&gt; (define content meaning)</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">Common Semantic Elements</div>
+    <div class="subtitle">1. &lt;header&gt; Element</div>
+    <pre>
+&lt;header&gt;
+  &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;nav&gt;...navigation...&lt;/nav&gt;
+&lt;/header&gt;
+    </pre>
+
+    <div class="subtitle">2. &lt;footer&gt; Element</div>
+    <pre>
+&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;
+&lt;/footer&gt;
+    </pre>
+
+    <div class="subtitle">3. &lt;article&gt; Element</div>
+    <pre>
+&lt;article&gt;
+  &lt;h2&gt;Latest News&lt;/h2&gt;
+  &lt;p&gt;This is a news article.&lt;/p&gt;
+&lt;/article&gt;
+    </pre>
+
+    <div class="subtitle">4. &lt;section&gt; Element</div>
+    <pre>
+&lt;section&gt;
+  &lt;h2&gt;About Us&lt;/h2&gt;
+  &lt;p&gt;Details about the company...&lt;/p&gt;
+&lt;/section&gt;
+    </pre>
+
+    <div class="subtitle">5. &lt;nav&gt; Element</div>
+    <pre>
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    </pre>
+
+    <div class="subtitle">6. &lt;aside&gt; Element</div>
+    <pre>
+&lt;aside&gt;
+  &lt;p&gt;Related article or content.&lt;/p&gt;
+&lt;/aside&gt;
+    </pre>
+
+    <div class="subtitle">7. &lt;figure&gt; and &lt;figcaption&gt; Elements</div>
+    <pre>
+&lt;figure&gt;
+  &lt;img src="images/example.jpg" alt="Description"&gt;
+  &lt;figcaption&gt;Figure 1: An example image.&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Multimedia in HTML5</div>
+    <p>HTML5 introduces native support for audio and video without requiring plugins.</p>
+    <pre>
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+    </pre>
+    <img src="multi.png" alt="HTML5 multimedia example">
+  </div>
+
+  <div class="content">
+    <div class="title">The &lt;canvas&gt; Element</div>
+    <p>The <b>&lt;canvas&gt;</b> element is used for drawing graphics, animations, or games using JavaScript. It supports 2D and 3D rendering (via WebGL).</p>
+    <pre>&lt;canvas id="myCanvas" width="500" height="400"&gt;&lt;/canvas&gt;</pre>
+    <img src="canvas.png" alt="HTML5 canvas element example">
+  </div>
+
+  <div class="content">
+    <div class="title">New Input Types in HTML5</div>
+    <ul class="list">
+      <li>email</li>
+      <li>url</li>
+      <li>date</li>
+      <li>range</li>
+      <li>number</li>
+    </ul>
+    <pre>&lt;input type="email" placeholder="Enter your email"&gt;</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">HTML5 Storage Options</div>
+    <ul class="list">
+      <li><b>localStorage:</b> Stores data permanently (no expiration).</li>
+      <li><b>sessionStorage:</b> Stores data for the current session.</li>
+    </ul>
+    <pre>localStorage.setItem('key', 'value');</pre>
+  </div>
+
+  <div class="content">
+    <div class="title">Browser Compatibility</div>
+    <p>HTML5 is widely supported across modern browsers such as Chrome, Firefox, Safari, and Edge. Features like semantic elements, video, audio, and canvas work seamlessly.</p>
+    <img src="browser.png" alt="HTML5 browser support chart">
+  </div>
+
+  <div class="content">
+    <div class="title">Lesson Learning Outcomes (LLOs)</div>
+    <ul class="list">
+      <li>Understand the new features introduced in HTML5.</li>
+      <li>Use semantic elements for structure and accessibility.</li>
+      <li>Implement multimedia using native tags.</li>
+      <li>Apply storage APIs for offline functionality.</li>
+    </ul>
+    <div class="highlight"><b>Final Tip:</b> Always use semantic elements for better SEO and maintainable web pages.</div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 COMSATS University Islamabad, Vehari | CSC336 – Lecture 5</p>
+  </div>
+</body>
+</html>
