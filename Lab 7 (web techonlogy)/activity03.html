@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Activities: setTimeout & setInterval</title>
+</head>
+<body>
+<h2>Lab Activity 1: setTimeout()</h2>
+<p>Click the button to see a message after 3 seconds:</p>
+<button onclick="showTimeoutMessage()">Show Message</button>
+<p id="timeoutDemo"></p>
+<hr>
+<h2>Lab Activity 3: setInterval() - Real-Time Clock</h2>
+<p>Current Time:</p>
+<p id="clock"></p>
+<script>
+function showTimeoutMessage() {
+    setTimeout(function() {
+        document.getElementById("timeoutDemo").innerHTML = "⏳ 3 seconds passed! This is your message.";
+    }, 3000);
+
+    document.getElementById("timeoutDemo").innerHTML = "Timer started... waiting 3 seconds.";
+}
+function startClock() {
+    setInterval(function() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+    }, 1000); 
+}
+startClock();
+</script>
+</body>
+</html>

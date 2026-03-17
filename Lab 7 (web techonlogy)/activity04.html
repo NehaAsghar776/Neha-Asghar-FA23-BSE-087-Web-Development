@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Activity: setInterval & clearInterval</title>
+</head>
+<body>
+<h2>Activity 3: Real-Time Clock using setInterval()</h2>
+<p>Current Time:</p>
+<p id="clock"></p>
+<button onclick="stopClock()">Stop Clock</button>
+<script>
+var clockInterval; 
+function startClock() {
+    clockInterval = setInterval(function() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+    }, 1000);
+}
+function stopClock() {
+    clearInterval(clockInterval);
+    document.getElementById("clock").innerHTML += " ⏹ Clock stopped!";
+}
+startClock();
+</script>
+</body>
+</html>

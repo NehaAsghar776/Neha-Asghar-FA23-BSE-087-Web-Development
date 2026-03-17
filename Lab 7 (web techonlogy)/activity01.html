@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout Example</title>
+</head>
+<body>
+<h2>setTimeout Demo</h2>
+<p>Click the button to see a message after 3 seconds:</p>
+<button onclick="showMessage()">Show Message</button>
+<p id="demo"></p>
+<script>
+function showMessage() {
+    // setTimeout to delay 3 seconds (3000 milliseconds)
+    setTimeout(function() {
+        document.getElementById("demo").innerHTML = "Hello! This message appeared after 3 seconds.";
+    }, 3000);
+}
+</script>
+</body>
+</html>

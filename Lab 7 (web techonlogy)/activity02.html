@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>clearTimeout Example</title>
+</head>
+<body>
+<h2>clearTimeout Demo</h2>
+<p>Click "Start Timer" to schedule a message in 5 seconds.</p>
+<p>Click "Stop Timer" to cancel it before it appears.</p>
+<button onclick="startTimer()">Start Timer</button>
+<button onclick="stopTimer()">Stop Timer</button>
+<p id="demo"></p>
+<script>
+var timer; 
+
+function startTimer() {
+    timer = setTimeout(function() {
+        document.getElementById("demo").innerHTML = "🎉 This message appeared after 5 seconds!";
+    }, 5000);
+    document.getElementById("demo").innerHTML = "Timer started... waiting 5 seconds.";
+}
+function stopTimer() {
+    // Cancel the scheduled function
+    clearTimeout(timer);
+    document.getElementById("demo").innerHTML = "⏹ Timer stopped! Message will not appear.";
+}
+</script>
+</body>
+</html>
