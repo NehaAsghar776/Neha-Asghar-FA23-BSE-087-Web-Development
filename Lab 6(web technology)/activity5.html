@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using If Condition</title>
+</head>
+<body>
+<h2>Number Guessing Game</h2>
+<p onclick="playGame()" style="cursor:pointer; color:blue;">
+    Play the Game
+</p>
+<p id="result"></p>
+<script>
+function playGame() {
+    var res = Math.floor(Math.random() * 10);
+    var num = prompt("Please enter a number (0-9):", 0);
+    if (num == res) {
+        document.getElementById("result").innerHTML = "🎉 You Won!";
+    } else {
+        document.getElementById("result").innerHTML = "❌ You Lost! Correct answer is: " + res;
+    }
+}
+</script>
+</body>
+</html>

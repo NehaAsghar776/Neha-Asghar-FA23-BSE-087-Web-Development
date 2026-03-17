@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Field Example</title>
+</head>
+<body>
+<h2>Search Field Demo</h2>
+<input type="search" id="mySearch" placeholder="Type something...">
+<br><br>
+<button onclick="showData()">Show Result</button>
+<p id="demo"></p>
+<script>
+function showData() {
+    var value = document.getElementById("mySearch").value;
+    if(value === "") {
+        document.getElementById("demo").innerHTML = "Please enter something!";
+    } else {
+        document.getElementById("demo").innerHTML = "You searched: " + value;
+    }
+}
+</script>
+</body>
+</html>
